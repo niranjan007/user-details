@@ -1,0 +1,25 @@
+<hr>
+<div class="container">
+    <!-- <div class="row">
+        <div class="col center ">
+            <button class="btn btn-primary btn-space" routerLink="userslist"> Users list </button>
+            <button class="btn btn-primary btn-space" routerLink="userinput">User input</button>
+        </div>
+    </div> -->
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <app-user-input (userInput)="recieveUser($event)"></app-user-input>
+        </div>
+        <div class="col-1">
+          
+        </div>
+        <div class="col-6">
+            <app-users-list [users] = "users"></app-users-list>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

@@ -1,0 +1,17 @@
+<br>
+<div class="container">
+  <h3 class="text-center">Enter user </h3>
+  <hr>
+  <form>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='user.fname' [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='user.lname' [ngModelOptions]="{standalone: true}">
+    </div>
+    <div class="form-group">
+      <input type="text" class="form-control" [(ngModel)]='user.city' [ngModelOptions]="{standalone: true}">
+    </div>
+    <button class="btn btn-primary" (click)='addUser()'>Submit</button>
+  </form>
+</div>
