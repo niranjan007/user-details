@@ -20,7 +20,7 @@ export class AddUser implements Action {
 
 export class AddUserSuccess implements Action {
   readonly type = UsersActionTypes.ADD_USER_SUCCESS;
-  constructor(public payload: boolean) { }
+  constructor(public payload: User) { }
 }
 
 export class AddUserFail implements Action {
@@ -34,11 +34,11 @@ export class DeleteUser implements Action {
 }
 
 export class DeleteUserSuccess implements Action {
-  readonly type = UsersActionTypes.ADD_USER_SUCCESS;
+  readonly type = UsersActionTypes.DELETE_USER_SUCCESS;
 }
 
 export class DeleteUserFail implements Action {
-  readonly type = UsersActionTypes.DELETE_USER;
+  readonly type = UsersActionTypes.DELETE_USER_FAIL;
   constructor(public payload: string) { }
 }
 

@@ -11,8 +11,8 @@ export class UsersService {
 
   url: string = "http://localhost:8080/"
 
-  addUser(user: User) {
-    this.http.post(this.url + "user", user);
+  addUser(user: User): Observable<User> {
+    return this.http.post<User>(this.url + "user", user);
   }
 
   deleteUser(id: number) {

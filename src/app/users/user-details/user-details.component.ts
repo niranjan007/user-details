@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../models/user.entity';
-import { Store } from '@ngrx/store';
-import { AddUser } from '../store/users.actions';
+import { Store, select } from '@ngrx/store';
+import { AddUser, LoadUsers } from '../store/users.actions';
+import { Observable } from 'rxjs';
+import * as fromUsers from '../store/users.reducer';
 
 @Component({
   selector: 'app-user-details',
@@ -17,9 +19,13 @@ export class UserDetailsComponent implements OnInit {
     city: "Sydney"
   };
 
-  constructor(private store : Store<User>) { }
+  users$: Observable<User[]>;
+
+  constructor(private store: Store<fromUsers.UserState>) { }
 
   ngOnInit() {
+    this.store.dispatch(new LoadUsers());
+    this.users$ = this.store.pipe(select(fromUsers.getAllUsers));
   }
 
   recieveUser($event: User) {

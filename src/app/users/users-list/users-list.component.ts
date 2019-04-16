@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { User } from '../models/user.entity';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-users-list',
@@ -9,11 +10,10 @@ import { User } from '../models/user.entity';
 export class UsersListComponent implements OnInit {
 
   @Input()
-  users: User[];
+  users$: Observable<User[]>;
 
   constructor() { }
 
   ngOnInit() {
   }
-
 }

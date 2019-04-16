@@ -3,7 +3,7 @@
   <h3 class="text-center">User list</h3>
   <hr>
   <ul>
-    <li *ngFor='let user of users'>
+    <li *ngFor='let user of users$ | async'>
       {{user.id}} {{user.fname}} {{user.lname}} {{user.city}}
     </li>
   </ul>
